@@ -50,7 +50,8 @@ public class LukcyController {
         lucky.setIsDone(Boolean.valueOf(false));
         lucky = (Lucky)this.luckyRepository.save(lucky);
         this.luckyRepository.flush();
-        return String.valueOf(lucky.getId());
+        //return String.valueOf(lucky.getId());
+        return (new Gson()).toJson(lucky.getId());
       } catch (ParseException e) {
         e.printStackTrace();
       }  
